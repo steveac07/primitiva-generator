@@ -1,0 +1,85 @@
+<title>Generador Primitiva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>/* @styles */</style>
+<!-- @head-end -->
+<div class="page">
+  <header class="masthead">
+    <p class="eyebrow">La Primitiva · 6 de 49 · 13.983.816 combinaciones</p>
+    <h1>Generador Primitiva</h1>
+    <p class="lede">Combinaciones aleatorias sin los patrones que juega todo el mundo. La probabilidad de acertar es la misma que con cualquier otra; lo que cambia es con cuánta gente repartirías el premio.</p>
+  </header>
+
+  <main class="layout">
+    <section class="slip" aria-labelledby="slip-title">
+      <div class="slip-head">
+        <h2 id="slip-title">Tu boleto</h2>
+        <div class="actions">
+          <button type="button" id="copy-all" class="btn ghost">Copiar todo</button>
+          <button type="button" id="generate" class="btn primary">Generar otra vez</button>
+        </div>
+      </div>
+
+      <div id="error" class="error" role="alert" hidden></div>
+      <ol id="bets" class="bets" aria-live="polite"></ol>
+
+      <dl id="stats" class="stats"></dl>
+
+      <div class="copy-block">
+        <p class="label" id="copy-label">Para pasar a la app</p>
+        <pre id="copy-text" class="copy-text" aria-labelledby="copy-label"></pre>
+      </div>
+    </section>
+
+    <aside class="settings" aria-label="Ajustes">
+      <section class="group">
+        <div class="group-head">
+          <h3 id="bets-title">Apuestas</h3>
+          <span id="cost-hint" class="hint"></span>
+        </div>
+        <div id="bets-picker" class="segmented eight" role="group" aria-labelledby="bets-title"></div>
+      </section>
+
+      <section class="group">
+        <div class="group-head">
+          <h3 id="shared-title">Números en común</h3>
+        </div>
+        <div id="shared-picker" class="segmented six" role="group" aria-labelledby="shared-title"></div>
+        <p class="hint">Máximo de números que pueden repetirse entre dos apuestas. Con 0 todas son distintas.</p>
+      </section>
+
+      <section class="group">
+        <div class="group-head">
+          <h3 id="exclude-title">Excluir números</h3>
+          <button type="button" id="clear-excluded" class="link">Limpiar</button>
+        </div>
+        <div id="exclude-grid" class="grid49" role="group" aria-labelledby="exclude-title"></div>
+        <p id="exclude-hint" class="hint"></p>
+      </section>
+
+      <section class="group">
+        <div class="group-head">
+          <h3>Filtros anti-patrón</h3>
+        </div>
+        <ul id="rules" class="rules"></ul>
+      </section>
+
+      <details class="group" id="winners-group">
+        <summary>Evitar combinaciones ya premiadas</summary>
+        <label for="winners" class="hint">Pega una combinación por línea. No se generará ninguna de ellas.</label>
+        <textarea id="winners" rows="4" spellcheck="false" placeholder="5 8 23 28 40 44&#10;7 11 20 31 40 42"></textarea>
+        <p id="winners-status" class="hint"></p>
+      </details>
+
+      <div class="group reset-row">
+        <button type="button" id="reset" class="link">Restablecer ajustes</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footnote">
+    <p>Las bolas no tienen memoria: los sorteos pasados no predicen el siguiente. Los filtros no suben tu probabilidad de acertar; reducen la de compartir un premio de categoría alta. Aleatoriedad criptográfica del navegador (Web Crypto), sin sesgo de módulo.</p>
+  </footer>
+</div>
+<!-- @app -->
